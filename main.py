@@ -71,5 +71,19 @@ class Item:
 
 # #-------- special presentation ----------
 # print(Item.all)
-Item.instantiate_from_csv()
-print(Item.all)
+# Item.instantiate_from_csv()
+# print(Item.all)
+class Phone(Item):
+    all = []
+
+    def __init__(self, name, price, quantity, broken_phone):
+        super().__init__(name, price, quantity)
+
+        assert broken_phone >= 0, f'Broken phones {broken_phone} cant be negative'
+        self.broken_phones = broken_phone
+
+        Phone.all.append(self)
+
+
+phone1 = Phone('A8000', 8000, 2, 0)
+print(Phone.all, phone1.price_calc())
