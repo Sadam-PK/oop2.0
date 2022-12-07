@@ -8,6 +8,8 @@
 
 class Item:
     def __init__(self, name, price, quantity):
+        assert price >= 0
+        assert quantity >= 0
         self.name = name
         self.price = price
         self.quantity = quantity
