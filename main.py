@@ -7,9 +7,11 @@
 # print(type(item3))
 
 class Item:
+    pay_rate = 0.8
+
     def __init__(self, name, price, quantity):
-        assert price >= 0
-        assert quantity >= 0
+        assert price >= 0, f'Price should be more than 0'
+        assert quantity >= 0, f'Quantity should be more than 0'
         self.name = name
         self.price = price
         self.quantity = quantity
@@ -21,9 +23,16 @@ class Item:
     def price_calc(self):
         return self.price * self.quantity
 
+    def apply_discount(self):
+        self.price = self.price * self.pay_rate
+
 
 item1 = Item('Apple', 10, 2)
+item1.apply_discount()
+
 item2 = Item('Banana', 5, 3)
+item2.pay_rate = 0.7
+item2.apply_discount()
 
 print(item1.name, item1.price, item1.quantity)
 print(item2.name, item2.price, item2.quantity)
