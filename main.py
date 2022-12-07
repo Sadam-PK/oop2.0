@@ -45,7 +45,7 @@ class Item:
             )
 
     def __repr__(self):
-        return f"Item('{self.name}', '{self.price}', {self.quantity})"
+        return f"{self.__class__.__name__}('{self.name}', '{self.price}', {self.quantity})"
 
 
 # item1 = Item('Apple', 10, 2)
@@ -74,16 +74,13 @@ class Item:
 # Item.instantiate_from_csv()
 # print(Item.all)
 class Phone(Item):
-    all = []
-
     def __init__(self, name, price, quantity, broken_phone):
         super().__init__(name, price, quantity)
 
         assert broken_phone >= 0, f'Broken phones {broken_phone} cant be negative'
         self.broken_phones = broken_phone
 
-        Phone.all.append(self)
-
 
 phone1 = Phone('A8000', 8000, 2, 0)
-print(Phone.all, phone1.price_calc())
+# print(Item.all)
+print(Phone.all)
