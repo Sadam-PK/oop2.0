@@ -1,6 +1,3 @@
-from item import Item
-from phone import Phone
-
 # item1 = 1
 # item2 = 1.2
 # item3 = 'apple'
@@ -8,7 +5,6 @@ from phone import Phone
 # print(type(item1))
 # print(type(item2))
 # print(type(item3))
-
 
 # item1 = Item('Apple', 10, 2)
 # # item1.apply_discount()
@@ -37,13 +33,13 @@ from phone import Phone
 # Item.instantiate_from_csv()
 # print(Item.all)
 
-
-phone1 = Phone('A8000', 8000, 2, 0)
-# print(Item.all)
-print(Phone.all)
-
-item1 = Item('apple', 3, 5)
-print(item1.name)
+#
+# phone1 = Phone('A8000', 8000, 2, 0)
+# # print(Item.all)
+# print(Phone.all)
+#
+# item1 = Item('apple', 3, 5)
+# print(item1.name)
 #
 # print(item1.read_only_name)
 #
@@ -54,7 +50,8 @@ print(item1.name)
 # item1.read_only_name = 'ccc'
 
 # #------ after setters ---------
-
-item1.name = 'new apple'
-
-print(item1.name)
+#
+# item1 = Keyboard('myKeyboard', 12, 2)
+# print(item1.price)
+# item1.apply_discount()
+# print(item1.price)

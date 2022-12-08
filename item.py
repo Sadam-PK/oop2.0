@@ -9,8 +9,8 @@ class Item:
         assert price >= 0, f'Price should be more than 0'
         assert quantity >= 0, f'Quantity should be more than 0'
         self.__name = name
-        self.price = price
-        self.quantity = quantity
+        self.__price = price
+        self.__quantity = quantity
 
         # Actions to execute
         Item.all.append(self)
@@ -24,11 +24,27 @@ class Item:
     def name(self, value):
         self.__name = value
 
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, value):
+        self.__price = value
+
+    @property
+    def quantity(self):
+        return self.__quantity
+
+    @quantity.setter
+    def quantity(self, value):
+        self.__quantity = value
+
     def price_calc(self):
-        return self.price * self.quantity
+        return self.__price * self.__quantity
 
     def apply_discount(self):
-        self.price = self.price * self.pay_rate
+        self.__price = self.__price * self.pay_rate
 
     @classmethod
     def instantiate_from_csv(cls):
@@ -43,4 +59,4 @@ class Item:
             )
 
     def __repr__(self):
-        return f"{self.__class__.__name__}('{self.name}', '{self.price}', {self.quantity})"
+        return f"{self.__class__.__name__}('{self.name}', '{self.__price}', {self.__quantity})"
