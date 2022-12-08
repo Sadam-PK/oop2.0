@@ -1,3 +1,4 @@
+from item import Item
 from phone import Phone
 
 # item1 = 1
@@ -40,3 +41,20 @@ from phone import Phone
 phone1 = Phone('A8000', 8000, 2, 0)
 # print(Item.all)
 print(Phone.all)
+
+item1 = Item('apple', 3, 5)
+print(item1.name)
+#
+# print(item1.read_only_name)
+#
+# item1.name = 'ccc'
+#
+# print(item1.name)
+#
+# item1.read_only_name = 'ccc'
+
+# #------ after setters ---------
+
+item1.name = 'new apple'
+
+print(item1.name)
